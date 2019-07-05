@@ -1,0 +1,8 @@
+<h1>{{ title }}</h1>
+<div *ngIf="folders">
+  <app-folders [folders]="folders">
+    <!--<app-folders *ngFor="let folder "></app-folders>-->
+  </app-folders>
+  <button (click)="printFolders()">Click</button>
+</div>
+<router-outlet></router-outlet>

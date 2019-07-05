@@ -1,0 +1,10 @@
+<app-success-alert *ngIf="!isSuccess()"></app-success-alert>
+<app-warning-alert *ngIf="isSuccess()"></app-warning-alert>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="name">
+<button [ngClass]="{'red': isSuccess(), 'green': !isSuccess()}"
+        (click)="inputReset()">
+  {{ isSuccess() ? 'No Name' : 'Reset name' }}
+</button>

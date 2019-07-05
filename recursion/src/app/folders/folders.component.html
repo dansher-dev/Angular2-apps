@@ -1,0 +1,28 @@
+<div *ngFor="let folder of folders" [ngClass]="{'favorite': folder.favorite}" class="folder">
+  <h4> {{folder.nameFolder}} </h4>
+  <p>{{ folder.id }}</p>
+  <p>{{ folder.contentFolder.title }}</p>
+  <div>{{ folder.contentFolder.text }}</div>
+  <button (click)="showSubsForId(folder.id)" *ngIf="folder.subFolders && !indexes.includes(folder.id)">+</button>
+  <button (click)="hideSubsForId(folder.id)" *ngIf="folder.subFolders && indexes.includes(folder.id)">-</button>
+  <div *ngIf="folder.subFolders && indexes.includes(folder.id)" class="subfolders">
+    <app-folders [folders]="folder.subFolders">
+      <!--<app-folders *ngFor="let folder "></app-folders>-->
+    </app-folders>
+  </div>
+  <button *ngIf="indexes.includes(folder.id)">Add subfolder</button>
+  <div>
+    <label>Folder name
+    <input [(ngModel)]="newFolder.nameFolder">
+    </label>
+    <label>Folder title
+      <input [(ngModel)]="newFolder.contentFolder.title">
+    </label>
+    <label>Folder text
+      <input [(ngModel)]="newFolder.contentFolder.text">
+    </label>
+    <label>Favorite
+      <input type="checkbox" [(ngModel)]="newFolder.favorite">
+    </label>
+  </div>
+</div>
