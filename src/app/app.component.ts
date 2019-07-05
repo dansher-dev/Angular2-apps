@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Folder } from './folder';
-import { FolderService } from './folder.service';
+import { Folder } from './folder.class/folder';
+import { FolderService } from './folder.service/folder.service';
 
 @Component({
   selector: 'app-root',

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Folder } from '../folder';
+import { Folder } from '../folder.class/folder';
 
 @Component({
   selector: 'app-folders',
